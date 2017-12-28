@@ -1,8 +1,12 @@
 <?php
+
 // Heading
+
 $_['heading_title']            ='Chariot';
 
+
 // Text
+
 $_['text_success']             ='Succès: vous avez ajouté <a href="%s"> %s </a> à ton <a href="%s"> chariot </a> !';
 $_['text_remove']              ='Succès: Vous avez modifié votre panier!';
 $_['text_login']               ='Attention: vous devez <a href="%s"> s`identifier </a> ou <a href="%s"> créer un compte </a> Pour voir les prix!';
@@ -18,6 +22,8 @@ $_['text_month']               ='mois';
 $_['text_year']                ='an';
 $_['text_trial']               ='%s tous les %s %s pour %s paiements alors';
 $_['text_recurring']           ='%s tous les %s %s';
+$_['text_length']              ='Pour %s paiements';
+$_['text_until_cancelled']     ='Jusqu`à annulation';
 $_['text_recurring_item']      ='Article récurrent';
 $_['text_payment_recurring']   ='Profil de paiement';
 $_['text_trial_description']   ='%s tous les %d %s (s) pour %d paiement (s) puis';

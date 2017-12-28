@@ -13,7 +13,7 @@ $_['text_account_already']      ='Si vous avez déjà un compte avec nous, conne
 $_['text_signup']               ='Pour créer un compte affilié, complétez le formulaire ci-dessous pour vous compléter tous les champs requis:';
 $_['text_your_details']         ='Vos informations personnelles';
 $_['text_your_address']         ='Détails de votre adresse';
-$_['text_your_affiliate']       ='Informations de votre affiliate';
+$_['text_payment']              ='Informations de paiement';
 $_['text_your_password']        ='Votre mot de passe';
 $_['text_cheque']               ='Vérifier';
 $_['text_paypal']               ='Pay Pal';
@@ -23,7 +23,6 @@ $_['text_agree']                ='j`ai lu et accepté les <a href="%s" class="ag
 
 // Entry
 
-$_['entry_customer_group']      ='Groupe de clients';
 $_['entry_firstname']           ='Prénom';
 $_['entry_lastname']            ='Nom de famille';
 $_['entry_email']               ='Email';
@@ -31,6 +30,12 @@ $_['entry_telephone']           ='Téléphone';
 $_['entry_fax']                 ='Fax';
 $_['entry_company']             ='Compagnie';
 $_['entry_website']             ='Site Internet';
+$_['entry_address_1']           ='Adresse 1';
+$_['entry_address_2']           ='Adresse 2';
+$_['entry_postcode']            ='Code postal';
+$_['entry_city']                ='Ville';
+$_['entry_country']             ='Pays';
+$_['entry_zone']                ='Région / État';
 $_['entry_tax']                 ='ID de l`impôt';
 $_['entry_payment']             ='Mode de paiement';
 $_['entry_cheque']              ='Vérifier le nom du bénéficiaire';
@@ -44,12 +49,6 @@ $_['entry_password']            ='Mot de passe';
 $_['entry_confirm']             ='Confirmer le mot de passe';
 
 
-$_['entry_address_1']           ='Adresse 1';
-$_['entry_address_2']           ='Adresse 2';
-$_['entry_postcode']            ='Code postal';
-$_['entry_city']                ='Ville';
-$_['entry_country']             ='Pays';
-$_['entry_zone']                ='Région / État';
 // Error
 
 $_['error_exists']              ='Attention: l`adresse e-mail est déjà enregistrée!';

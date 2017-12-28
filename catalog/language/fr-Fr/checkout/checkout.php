@@ -1,8 +1,12 @@
 <?php
+
 // Heading
+
 $_['heading_title']                  ='Check-out';
 
+
 // Text
+
 $_['text_cart']                      ='Chariot';
 $_['text_checkout_option']           ='Étape %s: options de paiement';
 $_['text_checkout_account']          ='Étape %s: Détails de facturation et de facturation';
@@ -40,14 +44,18 @@ $_['text_semi_month']                ='Demi-mois';
 $_['text_month']                     ='mois';
 $_['text_year']                      ='an';
 
+
 // Column
+
 $_['column_name']                    ='Nom du produit';
 $_['column_model']                   ='maquette';
 $_['column_quantity']                ='Quantité';
 $_['column_price']                   ='Prix ​​unitaire';
 $_['column_total']                   ='Total';
 
+
 // Entry
+
 $_['entry_email_address']            ='Adresse e-mail';
 $_['entry_email']                    ='Email';
 $_['entry_password']                 ='Mot de passe';
@@ -55,6 +63,7 @@ $_['entry_confirm']                  ='Confirmer le mot de passe';
 $_['entry_firstname']                ='Prénom';
 $_['entry_lastname']                 ='Nom de famille';
 $_['entry_telephone']                ='Téléphone';
+$_['entry_fax']                      ='Fax';
 $_['entry_address']                  ='Choisissez l`adresse';
 $_['entry_company']                  ='Compagnie';
 $_['entry_customer_group']           ='Groupe de clients';
@@ -67,7 +76,9 @@ $_['entry_zone']                     ='Région / État';
 $_['entry_newsletter']               ='Je souhaite m`abonner à la newsletter %s.';
 $_['entry_shipping'] 	             ='Mes adresses de livraison et de facturation sont identiques.';
 
+
 // Error
+
 $_['error_warning']                  ='Il y a eu un problème tout en essayant de traiter votre commande!  <a href="%s"> Cliquez ici </a> .';
 $_['error_login']                    ='Avertissement: Aucune correspondance pour l`adresse e-mail et / ou le mot de passe.';
 $_['error_attempts']                 ='Avertissement: votre compte a dépassé le nombre d`essais autorisés de connexion. Veuillez réessayer dans 1 heure.';

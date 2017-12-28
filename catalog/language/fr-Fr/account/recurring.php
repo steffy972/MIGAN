@@ -45,6 +45,32 @@ $_['text_transaction_expired'] ='Expiré';
 
 
 
+
+
+
+
+
+$_['text_empty']                 ='Aucun paiement récurrent n`a été trouvé!';
+$_['text_error']                 ='L`ordre récurrent que vous avez demandé n`a pas pu être trouvé!';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$_['text_cancelled'] ='Le paiement récurrent a été annulé';
+
+
 // Column
 
 $_['column_date_added']         ='date ajoutée';
