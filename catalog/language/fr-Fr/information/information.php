@@ -2,4 +2,4 @@
 
 // Text
 
-$_['text_error'] ='Page d`information introuvable!';
+$_['text_error'] ='Page d\'information introuvable!';

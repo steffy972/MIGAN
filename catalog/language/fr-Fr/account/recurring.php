@@ -50,8 +50,8 @@ $_['text_transaction_expired'] ='Expiré';
 
 
 
-$_['text_empty']                 ='Aucun paiement récurrent n`a été trouvé!';
-$_['text_error']                 ='L`ordre récurrent que vous avez demandé n`a pas pu être trouvé!';
+$_['text_empty']                 ='Aucun paiement récurrent n\'a été trouvé!';
+$_['text_error']                 ='L\'ordre récurrent que vous avez demandé n\'a pas pu être trouvé!';
 
 
 
@@ -84,7 +84,7 @@ $_['column_order_recurring_id'] ='Identification récurrente';
 // Error
 
 $_['error_not_cancelled'] ='Erreur: %s';
-$_['error_not_found']     ='Impossible d`annuler la récurrence';
+$_['error_not_found']     ='Impossible d\'annuler la récurrence';
 
 
 // Button

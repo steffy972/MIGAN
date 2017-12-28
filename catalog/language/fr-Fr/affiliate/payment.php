@@ -19,7 +19,7 @@ $_['text_success']              ='Succès: votre compte a été mis à jour avec
 
 // Entry
 
-$_['entry_tax']                 ='ID de l`impôt';
+$_['entry_tax']                 ='ID de l\'impôt';
 $_['entry_payment']             ='Mode de paiement';
 $_['entry_cheque']              ='Vérifier le nom du bénéficiaire';
 $_['entry_paypal']              ='Compte de messagerie PayPal';

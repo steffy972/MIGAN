@@ -14,7 +14,7 @@ $_['text_content_bottom'] ='Contenu Bas';
 $_['text_column_left'] ='Colonne gauche';
 $_['text_column_right'] ='Colonne Droite';
 $_['text_lwa_button'] ='Connectez-vous avec Amazon';
-$_['text_login_button'] ='S`identifier';
+$_['text_login_button'] ='S\'identifier';
 $_['text_a_button'] ='UNE';
 $_['text_gold_button'] ='Or';
 $_['text_darkgray_button'] ='Gris foncé';
@@ -38,4 +38,4 @@ $_['entry_sort_order'] ='Ordre de tri';
 
 //Error
 
-$_['error_permission'] ='Avertissement: Vous n`avez pas la permission de modifier le module Connectez-vous avec Amazon!';
+$_['error_permission'] ='Avertissement: Vous n\'avez pas la permission de modifier le module Connectez-vous avec Amazon!';

@@ -9,7 +9,7 @@ $_['text_order_id']         = 'Numéro de commande:';
 $_['text_date_added']       == 'Date ajoutée:';
 $_['text_order_status']     = 'Statut de la commande:';
 $_['text_payment_method']   = 'Mode de paiement:';
-$_['text_shipping_method']  == 'Méthode d`envoi:';
+$_['text_shipping_method']  == 'Méthode d\'envoi:';
 $_['text_email']            = 'E-mail:';
 $_['text_telephone']        = 'Téléphone:';
 $_['text_ip']               = 'Adresse IP:';

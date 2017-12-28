@@ -9,7 +9,7 @@ $_['text_card_type']			='Type de carte:';
 $_['text_card_name']			='Nom de la carte:';
 $_['text_card_digits']			='Derniers chiffres:';
 $_['text_card_expiry']			='Expiration:';
-$_['text_transaction_error']	='Une erreur s`est produite lors de la transaction de votre transaction -';
+$_['text_transaction_error']	='Une erreur s\'est produite lors de la transaction de votre transaction -';
 
 
 // Entry
@@ -21,7 +21,7 @@ $_['entry_card_save']			='Rappelez les détails de la carte';
 $_['entry_cc_owner']			='Propriétaire de la carte';
 $_['entry_cc_number']			='Numéro de carte';
 $_['entry_cc_start_date']		='Carte valide à partir de la date';
-$_['entry_cc_expire_date']		='date d`expiration de la carte';
+$_['entry_cc_expire_date']		='date d\'expiration de la carte';
 $_['entry_cc_cvv2']				='Code de sécurité de la carte (CVV2)';
 $_['entry_cc_address']			='Adresse de rue';
 $_['entry_cc_city']				='Ville';

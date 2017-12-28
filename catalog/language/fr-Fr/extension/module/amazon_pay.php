@@ -38,4 +38,4 @@ $_['entry_sort_order'] ='Ordre de tri';
 
 //Error
 
-$_['error_permission'] ='Avertissement: Vous n`avez pas la permission de modifier le module Payer avec Amazon!';
+$_['error_permission'] ='Avertissement: Vous n\'avez pas la permission de modifier le module Payer avec Amazon!';

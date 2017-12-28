@@ -15,7 +15,7 @@ $_['text_recurring']		 ='%s tous les %s %s';
 $_['text_length']			 ='Pour %s paiements';
 $_['text_confirm_delete']	 ='Êtes-vous sûr de vouloir supprimer cette carte?';
 $_['text_card_success']		 ='La carte a été éliminée avec succès';
-$_['text_card_error']		 ='Il y a une erreur à supprimer votre carte. Veuillez contacter l`administrateur du magasin pour obtenir de l`aide.';
+$_['text_card_error']		 ='Il y a une erreur à supprimer votre carte. Veuillez contacter l\'administrateur du magasin pour obtenir de l\'aide.';
 
 
 // Entry
@@ -35,4 +35,4 @@ $_['button_delete_card']	 ='Supprimer la carte';
 
 // Error
 
-$_['error_process_order']	 ='Il y a une erreur dans le traitement de votre commande. Veuillez contacter l`administrateur du magasin pour obtenir de l`aide.';
+$_['error_process_order']	 ='Il y a une erreur dans le traitement de votre commande. Veuillez contacter l\'administrateur du magasin pour obtenir de l\'aide.';

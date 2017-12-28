@@ -5,7 +5,7 @@
 $_['text_refine']       ='Affiner votre recherche';
 $_['text_product']      ='Des produits';
 $_['text_error']        ='Catégorie introuvable!';
-$_['text_empty']        ='Il n`y a aucun produit à lister dans cette catégorie.';
+$_['text_empty']        ='Il n\'y a aucun produit à lister dans cette catégorie.';
 $_['text_quantity']     ='Qté:';
 $_['text_manufacturer'] ='Marque:';
 $_['text_model']        ='Code produit:';

@@ -22,4 +22,4 @@ $_['entry_confirm']  ='Confirmer';
 
 $_['error_password'] ='Le mot de passe doit être compris entre 4 et 20 caractères!';
 $_['error_confirm']  ='Le mot de passe et la confirmation du mot de passe ne correspondent pas!';
-$_['error_code']     ='Le code de réinitialisation du mot de passe n`est pas valide ou a été utilisé précédemment!';
+$_['error_code']     ='Le code de réinitialisation du mot de passe n\'est pas valide ou a été utilisé précédemment!';

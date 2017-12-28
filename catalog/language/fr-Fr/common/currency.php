@@ -2,4 +2,4 @@
 
 // Text
 
-$_['text_currency'] ='Devise';
+$_['text_currency'] = 'Devise';

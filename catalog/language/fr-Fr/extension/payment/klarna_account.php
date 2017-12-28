@@ -26,21 +26,21 @@ $_['entry_phone_no']			='Numéro de téléphone';
 $_['entry_street']				='rue';
 $_['entry_house_no']			='Numéro de maison.';
 $_['entry_house_ext']			='Maison Ext.';
-$_['entry_company']				='Numéro d`entreprise';
+$_['entry_company']				='Numéro d\'entreprise';
 
 
 // Help
 
 $_['help_pno']					='Entrez votre numéro de sécurité sociale ici.';
-$_['help_phone_no']				='S`il vous plait, entrez votre numéro de téléphone.';
-$_['help_street']				='Veuillez noter que la livraison ne peut avoir lieu qu`à l`adresse enregistrée lors du paiement avec Klarna.';
+$_['help_phone_no']				='S\'il vous plait, entrez votre numéro de téléphone.';
+$_['help_street']				='Veuillez noter que la livraison ne peut avoir lieu qu\'à l\'adresse enregistrée lors du paiement avec Klarna.';
 $_['help_house_no']				='Entrez votre numéro de maison.';
 $_['help_house_ext']			='Veuillez envoyer votre poste de maison ici. E. g. A, B, C, Rouge, Bleu ect.';
-$_['help_company']				='Entrez le numéro d`inscription de votre société';
+$_['help_company']				='Entrez le numéro d\'inscription de votre société';
 
 
 // Error
 
 $_['error_deu_terms']			='Vous devez accepter la politique de confidentialité de Klarna (Datenschutz)';
-$_['error_address_match']		='Les adresses de facturation et d`expédition doivent correspondre si vous souhaitez utiliser les paiements de Klarna';
-$_['error_network']				='Une erreur s`est produite lors de la connexion à Klarna. Veuillez réessayer plus tard.';
+$_['error_address_match']		='Les adresses de facturation et d\'expédition doivent correspondre si vous souhaitez utiliser les paiements de Klarna';
+$_['error_network']				='Une erreur s\'est produite lors de la connexion à Klarna. Veuillez réessayer plus tard.';

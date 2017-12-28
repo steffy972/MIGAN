@@ -5,6 +5,7 @@ class ControllerMailRegister extends Controller {
 
 		$data['text_welcome'] = sprintf($this->language->get('text_welcome'), html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8'));
 		$data['text_login'] = $this->language->get('text_login');
+		$data['text_validate'] = $this->language->get('text_validate');
 		$data['text_approval'] = $this->language->get('text_approval');
 		$data['text_service'] = $this->language->get('text_service');
 		$data['text_thanks'] = $this->language->get('text_thanks');
@@ -16,15 +17,25 @@ class ControllerMailRegister extends Controller {
 		} else {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}
-					
+				
 		$customer_group_info = $this->model_account_customer_group->getCustomerGroup($customer_group_id);
 		
 		if ($customer_group_info) {
+			$data['group'] = $customer_group_info['name'];
 			$data['approval'] = $customer_group_info['approval'];
 		} else {
+			$data['group'] = '';
 			$data['approval'] = '';
 		}
-			
+
+		$customer_info = $this->model_account_customer->getCustomerByEmail($args[0]['email']);
+		$data['customer'] = $customer_info;
+		$data['label_telephone'] = 'Téléphone';
+
+		$argument['token'] = $customer_info['token'];
+		$argument['customer'] = $customer_info['customer_id'];
+
+		$data['lien'] = $this->url->link('account/validation', $argument, true);
 		$data['login'] = $this->url->link('account/login', '', true);		
 		$data['store'] = html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8');
 
@@ -40,7 +51,7 @@ class ControllerMailRegister extends Controller {
 		$mail->setFrom($this->config->get('config_email'));
 		$mail->setSender(html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8'));
 		$mail->setSubject(sprintf($this->language->get('text_subject'), html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8')));
-		$mail->setText($this->load->view('mail/register', $data));
+		$mail->setHTML($this->load->view('mail/register', $data));
 		$mail->send(); 
 	}
 	

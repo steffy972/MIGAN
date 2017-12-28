@@ -19,7 +19,7 @@ $_['entry_cvc']							='CVC';
 
 // Error
 
-$_['error_process_order']				='Une erreur s`est produite lors de l`exécution de votre commande. Veuillez contacter l`administrateur du magasin pour obtenir de l`aide.';
+$_['error_process_order']				='Une erreur s\'est produite lors de l\'exécution de votre commande. Veuillez contacter l\'administrateur du magasin pour obtenir de l\'aide.';
 $_['error_invalid_currency']			='Utilisez une devise valide.';
 $_['error_finalizing_payment']			='Erreur de finalisation du paiement.';
 $_['error_unknown_order_id']			='Impossible de trouver le paiement par carte de crédit avec ce order_id.';

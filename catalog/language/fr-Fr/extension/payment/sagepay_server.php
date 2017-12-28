@@ -14,11 +14,11 @@ $_['text_recurring']			='%s tous les %s %s';
 $_['text_length']				='Pour %s paiements';
 $_['text_success']				='Votre paiement a été autorisé.';
 $_['text_decline']				='Votre paiement a été refusé.';
-$_['text_bank_error']			='Une erreur s`est produite lors de la transformation de votre demande auprès de la banque.';
-$_['text_transaction_error']	='Une erreur s`est produite lors de la transaction de votre transaction.';
+$_['text_bank_error']			='Une erreur s\'est produite lors de la transformation de votre demande auprès de la banque.';
+$_['text_transaction_error']	='Une erreur s\'est produite lors de la transaction de votre transaction.';
 $_['text_generic_error']		='Il y a eu une erreur lors du traitement de votre demande.';
-$_['text_hash_failed']			='La vérification du guichet a échoué. N`essayez plus votre paiement à mesure que l`état du paiement est inconnu. Veuillez contacter le marchand.';
-$_['text_link']					='Cliquez s`il vous plait <a href="%s"> ici </a> continuer';
+$_['text_hash_failed']			='La vérification du guichet a échoué. N\'essayez plus votre paiement à mesure que l\'état du paiement est inconnu. Veuillez contacter le marchand.';
+$_['text_link']					='Cliquez s\'il vous plait <a href="%s"> ici </a> continuer';
 $_['text_confirm_delete']		='Êtes-vous sûr de vouloir supprimer la carte?';
 
 

@@ -2,4 +2,4 @@
 
 // Text
 
-$_['text_language'] ='La langue';
+$_['text_language'] = 'Langue';

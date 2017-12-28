@@ -7,7 +7,7 @@ $_['heading_title']     ='Offres spéciales';
 
 // Text
 
-$_['text_empty']        ='Il n`y a pas d`offre spéciale de produits à inscrire.';
+$_['text_empty']        ='Il n\'y a pas d\'offre spéciale de produits à inscrire.';
 $_['text_quantity']     ='Qté:';
 $_['text_manufacturer'] ='Marque:';
 $_['text_model']        ='Code produit:';

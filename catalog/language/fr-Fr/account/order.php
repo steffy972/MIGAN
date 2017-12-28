@@ -14,14 +14,14 @@ $_['text_invoice_no']       ='Numéro de facture. :. ';
 $_['text_order_id']         ='Numéro de commande:';
 $_['text_date_added']       ='Date ajoutée:';
 $_['text_shipping_address'] ='Adresse de livraison';
-$_['text_shipping_method']  ='Méthode d`envoi:';
+$_['text_shipping_method']  ='Méthode d\'envoi:';
 $_['text_payment_address']  ='adresse de facturation';
 $_['text_payment_method']   ='Mode de paiement:';
 $_['text_comment']          ='Commentaires de la commande';
 $_['text_history']          ='Historique des commandes';
 $_['text_success']          ='Succès: vous avez ajouté <a href="%s"> %s </a> à ton <a href="%s"> chariot </a> !';
-$_['text_empty']            ='Vous n`avez effectué aucune commande précédente!';
-$_['text_error']            ='La commande que vous avez demandée n`a pas pu être trouvée!';
+$_['text_empty']            ='Vous n\'avez effectué aucune commande précédente!';
+$_['text_error']            ='La commande que vous avez demandée n\'a pas pu être trouvée!';
 
 
 // Column
@@ -42,4 +42,4 @@ $_['column_comment']        ='Commentaire';
 
 // Error
 
-$_['error_reorder']         ='%s n`est actuellement pas disponible pour être réorganisé.';
+$_['error_reorder']         ='%s n\'est actuellement pas disponible pour être réorganisé.';

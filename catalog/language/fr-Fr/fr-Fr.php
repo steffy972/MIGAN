@@ -27,14 +27,14 @@ $_['text_no_results']       ='Aucun résultat!';
 
 // Buttons
 
-$_['button_address_add']    ='Ajoutez l`adresse';
+$_['button_address_add']    ='Ajoutez l\'adresse';
 $_['button_back']           ='Arrière';
 $_['button_continue']       ='Continuer';
 $_['button_cart']           ='Ajouter au panier';
 $_['button_cancel']         ='Annuler';
 $_['button_compare']        ='Comparez ce produit';
 $_['button_wishlist']       ='Ajouter à la liste de souhaits';
-$_['button_checkout']       ='Check-out';
+$_['button_checkout']       ='Passer commande';
 $_['button_confirm']        ='Confirmer la commande';
 $_['button_coupon']         ='Appliquer Coupon';
 $_['button_delete']         ='Effacer';
@@ -42,19 +42,19 @@ $_['button_download']       ='Télécharger';
 $_['button_edit']           ='modifier';
 $_['button_filter']         ='Affiner votre recherche';
 $_['button_new_address']    ='Nouvelle adresse';
-$_['button_change_address'] ='Changement d`adresse';
+$_['button_change_address'] ='Changement d\'adresse';
 $_['button_reviews']        ='Avis';
 $_['button_write']          ='Ecrire une critique';
-$_['button_login']          ='S`identifier';
+$_['button_login']          ='S\'identifier';
 $_['button_update']         ='Mettre à jour';
 $_['button_remove']         ='Retirer';
 $_['button_reorder']        ='Réorganiser';
 $_['button_return']         ='Revenir';
 $_['button_shopping']       ='Continuer vos achats';
 $_['button_search']         ='Chercher';
-$_['button_shipping']       ='Appliquer l`expédition';
+$_['button_shipping']       ='Appliquer l\'expédition';
 $_['button_submit']         ='Soumettre';
-$_['button_guest']          ='Guest Checkout';
+$_['button_guest']          ='Panier invité';
 $_['button_view']           ='Vue';
 $_['button_voucher']        ='Appliquer un certificat-cadeau';
 $_['button_upload']         ='Téléverser un fichier';
@@ -67,13 +67,13 @@ $_['button_map']            ='Voir Google Map';
 
 // Error
 
-$_['error_exception']       ='Code d`erreur (%s): %s dans %s sur la ligne %s';
+$_['error_exception']       ='Code d\'erreur (%s): %s dans %s sur la ligne %s';
 $_['error_upload_1']        ='Attention: le fichier téléchargé dépasse la directive upload_max_filesize dans php. Ini!. ';
 $_['error_upload_2']        ='Avertissement: Le fichier téléchargé dépasse la directive MAX_FILE_SIZE qui a été spécifiée dans le formulaire HTML!';
-$_['error_upload_3']        ='Avertissement: Le fichier téléchargé n`a été que partiellement téléchargé!';
-$_['error_upload_4']        ='Attention: aucun fichier n`a été téléchargé!';
+$_['error_upload_3']        ='Avertissement: Le fichier téléchargé n\'a été que partiellement téléchargé!';
+$_['error_upload_4']        ='Attention: aucun fichier n\'a été téléchargé!';
 $_['error_upload_6']        ='Attention: manquant un dossier temporaire!';
-$_['error_upload_7']        ='Avertissement: Échec de l`écriture du fichier sur le disque!';
+$_['error_upload_7']        ='Avertissement: Échec de l\'écriture du fichier sur le disque!';
 $_['error_upload_8']        ='Avertissement: Téléchargement du fichier par extension';
-$_['error_upload_999']      ='Avertissement: Aucun code d`erreur disponible!';
-$_['error_curl']            ='CURL: Code d`erreur (%s): %s';
+$_['error_upload_999']      ='Avertissement: Aucun code d\'erreur disponible!';
+$_['error_curl']            ='CURL: Code d\'erreur (%s): %s';

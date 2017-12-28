@@ -9,7 +9,7 @@ $_['heading_title']     ='Compte Téléchargements';
 
 $_['text_account']      ='Compte';
 $_['text_downloads']    ='Téléchargements';
-$_['text_empty']        ='Vous n`avez effectué aucune commande téléchargeable précédente!';
+$_['text_empty']        ='Vous n\'avez effectué aucune commande téléchargeable précédente!';
 
 
 // Column

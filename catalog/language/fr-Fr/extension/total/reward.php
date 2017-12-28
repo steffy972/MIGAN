@@ -20,5 +20,5 @@ $_['entry_reward']  ='Points à utiliser (Max %s)';
 // Error
 
 $_['error_reward']  ='Avertissement: Veuillez entrer le montant des points de récompense à utiliser!';
-$_['error_points']  ='Avertissement: Vous n`avez pas %s points de récompense!';
+$_['error_points']  ='Avertissement: Vous n\'avez pas %s points de récompense!';
 $_['error_maximum'] ='Avertissement: Le nombre maximum de points pouvant être appliqués est de %s!';

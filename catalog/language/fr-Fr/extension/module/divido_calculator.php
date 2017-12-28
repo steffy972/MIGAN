@@ -11,6 +11,6 @@ $_['text_term']                ='Terme';
 $_['text_deposit']             ='Dépôt';
 $_['text_credit_amount']       ='Coût du crédit';
 $_['text_amount_payable']      ='Total à payer';
-$_['text_total_interest']      ='APR d`intérêt total';
+$_['text_total_interest']      ='APR d\'intérêt total';
 $_['text_monthly_installment'] ='Acompte mensuel';
 $_['text_redirection']         ='Vous serez redirigé vers Divido pour compléter cette demande de financement lorsque vous confirmez votre commande';

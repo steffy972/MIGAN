@@ -14,7 +14,7 @@ $_['text_description']   ='Veuillez compléter le formulaire ci-dessous pour dem
 $_['text_order']         ='Informations sur la commande';
 $_['text_product']       ='Information produit';
 $_['text_reason']        ='Raison du retour';
-$_['text_message']       ='  <p> Merci d`avoir envoyé votre demande de retour. Votre demande a été envoyée au service concerné pour traitement. </p>  <p> Vous serez informé par e-mail du statut de votre demande. </p> ';
+$_['text_message']       ='  <p> Merci d\'avoir envoyé votre demande de retour. Votre demande a été envoyée au service concerné pour traitement. </p>  <p> Vous serez informé par e-mail du statut de votre demande. </p> ';
 $_['text_return_id']     ='ID de retour:';
 $_['text_order_id']      ='Numéro de commande:';
 $_['text_date_ordered']  ='Date de commande:';
@@ -22,8 +22,8 @@ $_['text_status']        ='Statut:';
 $_['text_date_added']    ='Date ajoutée:';
 $_['text_comment']       ='Commentaires de retour';
 $_['text_history']       ='Historique de retour';
-$_['text_empty']         ='Vous n`avez effectué aucun retour précédent!';
-$_['text_agree']         ='j`ai lu et accepté les <a href="%s" class="agree">  <b> %s </b>  </a> ';
+$_['text_empty']         ='Vous n\'avez effectué aucun retour précédent!';
+$_['text_agree']         ='j\'ai lu et accepté les <a href="%s" class="agree">  <b> %s </b>  </a> ';
 
 
 // Column
@@ -61,11 +61,11 @@ $_['entry_fault_detail'] ='Fautes ou autres détails';
 
 // Error
 
-$_['text_error']         ='Les retours que vous avez demandés n`ont pas pu être trouvés!';
+$_['text_error']         ='Les retours que vous avez demandés n\'ont pas pu être trouvés!';
 $_['error_order_id']     ='ID de commande requis!';
 $_['error_firstname']    ='Le prénom doit être compris entre 1 et 32 ​​caractères!';
 $_['error_lastname']     ='Le nom de famille doit être compris entre 1 et 32 ​​caractères!';
-$_['error_email']        ='L`adresse e-mail ne semble pas être valide!';
+$_['error_email']        ='L\'adresse e-mail ne semble pas être valide!';
 $_['error_telephone']    ='Le téléphone doit avoir entre 3 et 32 ​​caractères!';
 $_['error_product']      ='Le nom du produit doit être supérieur à 3 et moins de 255 caractères!';
 $_['error_model']        ='Le modèle de produit doit être supérieur à 3 et moins de 64 caractères!';

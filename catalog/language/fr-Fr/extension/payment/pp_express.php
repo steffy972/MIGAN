@@ -26,7 +26,7 @@ $_['express_entry_coupon']    ='Entrez votre coupon ici:';
 $_['button_express_coupon']   ='Ajouter';
 $_['button_express_confirm']  ='Confirmer';
 $_['button_express_login']    ='Continuer vers PayPal';
-$_['button_express_shipping'] ='Mise à jour de l`expédition';
+$_['button_express_shipping'] ='Mise à jour de l\'expédition';
 
 
 // Error

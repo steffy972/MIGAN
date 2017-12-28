@@ -4,7 +4,7 @@
 
 $_['text_title']                        ='courrier Royal';
 $_['text_weight']                       ='Poids:';
-$_['text_insurance']                    ='Assuré jusqu`à:';
+$_['text_insurance']                    ='Assuré jusqu\'à:';
 $_['text_special_delivery']             ='Livraison spéciale le lendemain';
 $_['text_1st_class_signed']             ='Poste signé de première classe';
 $_['text_2nd_class_signed']             ='Poste signé en deuxième classe';

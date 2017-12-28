@@ -8,7 +8,7 @@ $_['button_confirm'] ='Confirmer';
 
 $_['text_postcode_check'] ='Vérification postcode: %s';
 $_['text_security_code_check'] ='Vérification CVV2: %s';
-$_['text_address_check'] ='Vérification d`adresse: %s';
+$_['text_address_check'] ='Vérification d\'adresse: %s';
 $_['text_not_given'] ='Pas donné';
 $_['text_not_checked'] ='Non vérifié';
 $_['text_match'] ='Assorti';

@@ -143,12 +143,6 @@ class ControllerAccountRegister extends Controller {
 			$data['telephone'] = '';
 		}
 
-		if (isset($this->request->post['siret'])) {
-			$data['siret'] = $this->request->post['siret'];
-		} else {
-			$data['siret'] = '';
-		}
-
 		// Custom Fields
 		$data['custom_fields'] = array();
 		
