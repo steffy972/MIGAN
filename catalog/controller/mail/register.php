@@ -10,6 +10,13 @@ class ControllerMailRegister extends Controller {
 		$data['text_service'] = $this->language->get('text_service');
 		$data['text_thanks'] = $this->language->get('text_thanks');
 
+
+		$data['HTTP_SERVER'] = HTTP_SERVER;
+		$data['image_header'] = HTTP_SERVER."image/mail_header.jpg";
+		$data['image_footer'] = HTTP_SERVER."image/mail_footer.png";
+		$data['mail_image_header'] = "image/mail_header.jpg";
+		$data['mail_image_footer'] = "image/mail_footer.png";
+
 		$this->load->model('account/customer_group');
 			
 		if (isset($args[0]['customer_group_id'])) {

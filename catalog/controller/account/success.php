@@ -16,6 +16,7 @@ class ControllerAccountSuccess extends Controller {
 					'href' => $this->url->link('account/success')
 				);
 
+				
 				$data['text_message'] = "<p>Merci d'avoir pris le temps de valider votre adresse mail. <br> Vous pouvez dès maintenant vous connecter avec votre adresse mail et mot de passe.</<p>";
 				$data['continue'] = $this->url->link('common/home');
 			} else {
