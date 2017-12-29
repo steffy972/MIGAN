@@ -33,8 +33,13 @@ class ControllerMailCustomer extends Controller {
 			$language->load('mail/customer_approve');
 						
 			$subject = sprintf($language->get('text_subject'), $store_name);
-								
+			$data['text_subject'] = sprintf($language->get('text_subject'), $store_name);
 			$data['text_welcome'] = sprintf($language->get('text_welcome'), $store_name);
+			$data['text_login'] = sprintf($language->get('text_login'), $store_name);
+			$data['text_service'] = sprintf($language->get('text_service'), $store_name);
+			$data['text_thanks'] = sprintf($language->get('text_thanks'), $store_name);
+			$data['image_header'] = HTTP_SERVER."image/mail_header.jpg";
+			$data['image_footer'] = HTTP_SERVER."image/mail_footer.png";
 				
 			$data['login'] = $store_url . 'index.php?route=account/login';	
 			$data['store'] = $store_name;
@@ -51,7 +56,7 @@ class ControllerMailCustomer extends Controller {
 			$mail->setFrom($this->config->get('config_email'));
 			$mail->setSender($store_name);
 			$mail->setSubject($subject);
-			$mail->setText($this->load->view('mail/customer_approve', $data));
+			$mail->setHTML($this->load->view('mail/customer_approve', $data));
 			$mail->send(); 
 		}
 	}
@@ -89,8 +94,13 @@ class ControllerMailCustomer extends Controller {
 			$language->load('mail/customer_deny');
 				
 			$subject = sprintf($language->get('text_subject'), $store_name);
-				
+			$data['text_subject'] = sprintf($language->get('text_subject'), $store_name);
 			$data['text_welcome'] = sprintf($language->get('text_welcome'), $store_name);
+			$data['text_login'] = sprintf($language->get('text_login'), $store_name);
+			$data['text_service'] = sprintf($language->get('text_service'), $store_name);
+			$data['text_thanks'] = sprintf($language->get('text_thanks'), $store_name);
+			$data['image_header'] = HTTP_SERVER."image/mail_header.jpg";
+			$data['image_footer'] = HTTP_SERVER."image/mail_footer.png";
 				
 			$data['contact'] = $store_url . 'index.php?route=information/contact';	
 			$data['store'] = $store_name;
@@ -107,7 +117,7 @@ class ControllerMailCustomer extends Controller {
 			$mail->setFrom($this->config->get('config_email'));
 			$mail->setSender($store_name);
 			$mail->setSubject($subject);
-			$mail->setText($this->load->view('mail/customer_deny', $data));
+			$mail->setHTML($this->load->view('mail/customer_deny', $data));
 			$mail->send();
 		}
 	}

@@ -29,6 +29,12 @@
 									<td style="font-weight: bold; color: #fc7704;">{{ group }}</td>
 									<td>{{ customer.firstname }} {{ customer.lastname }}</td>
 								</tr>
+								{% for custom_field in custom_fields %}
+								<tr>
+									<td style="font-weight: bold; color: #fc7704;">{{ custom_field.name }}</td>
+									<td>{{ custom_field.value }}</td>
+								</tr>
+								{% endfor %}
 								<tr>
 									<td style="font-weight: bold; color: #fc7704;">{{ label_telephone }}</td>
 									<td>{{ customer.telephone }}</td>
@@ -97,6 +103,12 @@
 									<td style="font-weight: bold; color: #fc7704;">{{ group }}</td>
 									<td>{{ customer.firstname }} {{ customer.lastname }}</td>
 								</tr>
+								{% for custom_field in custom_fields %}
+								<tr>
+									<td style="font-weight: bold; color: #fc7704;">{{ custom_field.name }}</td>
+									<td>{{ custom_field.value }}</td>
+								</tr>
+								{% endfor %}
 								<tr>
 									<td style="font-weight: bold; color: #fc7704;">{{ label_telephone }}</td>
 									<td>{{ customer.telephone }}</td>

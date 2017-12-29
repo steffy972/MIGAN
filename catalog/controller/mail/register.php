@@ -4,18 +4,13 @@ class ControllerMailRegister extends Controller {
 		$this->load->language('mail/register');
 
 		$data['text_welcome'] = sprintf($this->language->get('text_welcome'), html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8'));
-		$data['text_login'] = $this->language->get('text_login');
-		$data['text_validate'] = html_entity_decode($this->language->get('text_validate'), ENT_QUOTES, 'UTF-8');
-		$data['text_approval'] = html_entity_decode($this->language->get('text_approval'), ENT_QUOTES, 'UTF-8');
-		$data['text_service'] = $this->language->get('text_service');
-		$data['text_thanks'] = html_entity_decode($this->language->get('text_thanks'), ENT_QUOTES, 'UTF-8');
-
-
-		$data['HTTP_SERVER'] = HTTP_SERVER;
+		$data['text_login'] = utf8_encode($this->language->get('text_login'));
+		$data['text_validate'] = utf8_encode($this->language->get('text_validate'));
+		$data['text_approval'] = utf8_encode($this->language->get('text_approval'));
+		$data['text_service'] = utf8_encode($this->language->get('text_service'));
+		$data['text_thanks'] = utf8_encode($this->language->get('text_thanks'));
 		$data['image_header'] = HTTP_SERVER."image/mail_header.jpg";
 		$data['image_footer'] = HTTP_SERVER."image/mail_footer.png";
-		$data['mail_image_header'] = "image/mail_header.jpg";
-		$data['mail_image_footer'] = "image/mail_footer.png";
 
 		$this->load->model('account/customer_group');
 			
@@ -26,7 +21,20 @@ class ControllerMailRegister extends Controller {
 		}
 				
 		$customer_group_info = $this->model_account_customer_group->getCustomerGroup($customer_group_id);
+		$customer_info = $this->model_account_customer->getCustomerByEmail($args[0]['email']);
+		$data['customer'] = $customer_info;
+
+		$custom_fields_list = $this->model_account_custom_field->getCustomFields($customer_group_id);
+		$i = 0;
+		$custom_fields = json_decode($customer_info['custom_field']);
 		
+		foreach ($custom_fields_list as $custom_fields_info) {
+			$data['custom_fields'][$i]['name'] = $custom_fields_info['name'];
+			$data['custom_fields'][$i]['value'] = $custom_fields->$custom_fields_info['custom_field_id'];
+			$i++;
+		}
+
+
 		if ($customer_group_info) {
 			$data['group'] = $customer_group_info['name'];
 			$data['approval'] = $customer_group_info['approval'];
@@ -35,8 +43,6 @@ class ControllerMailRegister extends Controller {
 			$data['approval'] = '';
 		}
 
-		$customer_info = $this->model_account_customer->getCustomerByEmail($args[0]['email']);
-		$data['customer'] = $customer_info;
 		$data['label_telephone'] = 'Téléphone';
 
 		$argument['token'] = $customer_info['token'];
@@ -45,6 +51,8 @@ class ControllerMailRegister extends Controller {
 		$data['lien'] = $this->url->link('account/validation', $argument, true);
 		$data['login'] = $this->url->link('account/login', '', true);		
 		$data['store'] = html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8');
+
+		var_dump($data);
 
 		$mail = new Mail($this->config->get('config_mail_engine'));
 		$mail->parameter = $this->config->get('config_mail_parameter');
