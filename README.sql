@@ -1,6 +1,6 @@
 CREATE TABLE `migan_recette` (
 	`recette_id` INT NOT NULL AUTO_INCREMENT,
-	`name` INT NOT NULL DEFAULT '0',
+	`name` VARCHAR(50) NOT NULL DEFAULT '',
 	`description` TEXT NULL DEFAULT NULL,
 	`meta_title` VARCHAR(50) NOT NULL DEFAULT '0',
 	`meta_description` TEXT NULL DEFAULT NULL,
