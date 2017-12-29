@@ -5,10 +5,10 @@ class ControllerMailRegister extends Controller {
 
 		$data['text_welcome'] = sprintf($this->language->get('text_welcome'), html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8'));
 		$data['text_login'] = $this->language->get('text_login');
-		$data['text_validate'] = $this->language->get('text_validate');
-		$data['text_approval'] = $this->language->get('text_approval');
+		$data['text_validate'] = html_entity_decode($this->language->get('text_validate'), ENT_QUOTES, 'UTF-8');
+		$data['text_approval'] = html_entity_decode($this->language->get('text_approval'), ENT_QUOTES, 'UTF-8');
 		$data['text_service'] = $this->language->get('text_service');
-		$data['text_thanks'] = $this->language->get('text_thanks');
+		$data['text_thanks'] = html_entity_decode($this->language->get('text_thanks'), ENT_QUOTES, 'UTF-8');
 
 
 		$data['HTTP_SERVER'] = HTTP_SERVER;
