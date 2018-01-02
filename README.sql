@@ -33,3 +33,11 @@ ALTER TABLE `migan_recette_image`
 ALTER TABLE `migan_recette_image`
 	CHANGE COLUMN `product_image_id` `recette_image_id` INT(11) NOT NULL AUTO_INCREMENT FIRST,
 	CHANGE COLUMN `product_id` `recette_id` INT(11) NOT NULL AFTER `recette_image_id`;
+
+	CREATE TABLE `migan_recette_product` (
+	`recette_id` INT NOT NULL,
+	`product_id` INT NOT NULL,
+	PRIMARY KEY (`recette_id`, `product_id`)
+)
+COLLATE='latin1_swedish_ci'
+;

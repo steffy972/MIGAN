@@ -27,6 +27,7 @@
           <ul class="nav nav-tabs">
             <li class="active"><a href="#tab-general" data-toggle="tab">{{ tab_general }}</a></li>
             <li><a href="#tab-image" data-toggle="tab">{{ tab_image }}</a></li>
+			<li><a href="#tab-related" data-toggle="tab">{{ tab_related }}</a></li>
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="tab-general">
@@ -41,6 +42,38 @@
                       <div class="text-danger">{{ error_name }}</div>
                       {% endif %} </div>
                   </div>
+				  <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-status">{{ entry_status }}</label>
+                <div class="col-sm-10">
+                  <select name="status" id="input-status" class="form-control">
+                    
+
+                    {% if status %}
+
+                    
+                    <option value="1" selected="selected">{{ text_enabled }}</option>
+                    <option value="0">{{ text_disabled }}</option>
+                    
+
+                    {% else %}
+
+                    
+                    <option value="1">{{ text_enabled }}</option>
+                    <option value="0" selected="selected">{{ text_disabled }}</option>
+                    
+
+                    {% endif %}
+
+                  
+                  </select>
+                </div>
+              </div>
+				  <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-sort-order">{{ entry_sort_order }}</label>
+                <div class="col-sm-10">
+                  <input type="text" name="sort_order" value="{{ sort_order }}" placeholder="{{ entry_sort_order }}" id="input-sort-order" class="form-control" />
+                </div>
+              </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-description">{{ entry_description }}</label>
                     <div class="col-sm-10">
@@ -103,6 +136,7 @@
                       
                     </div>
                   </div>
+				  
                   
                 </div>
                </div>
@@ -156,6 +190,20 @@
                 </table>
               </div>
             </div>
+			
+                <div class="tab-pane" id="tab-related" >
+                  <div class="form-group required">
+                    <label class="col-sm-2 control-label" for="input-name">{{ entry_related }}</label>
+                   <div class="col-sm-10">
+                  <input type="text" name="related" value="" placeholder="{{ entry_related }}" id="input-related" class="form-control" />
+                  <div id="product-related" class="well well-sm" style="height: 150px; overflow: auto;"> {% for product_related in product_relateds %}
+                    <div id="product-related{{ product_related.product_id }}"><i class="fa fa-minus-circle"></i> {{ product_related.name }}
+                      <input type="hidden" name="product_related[]" value="{{ product_related.product_id }}" />
+                    </div>
+                    {% endfor %}</div>
+                </div>
+                  </div>
+             
             
           </div>
         </form>
@@ -171,152 +219,38 @@
   <link href="view/javascript/summernote/summernote.css" rel="stylesheet" />
   <script type="text/javascript" src="view/javascript/summernote/summernote-image-attributes.js"></script> 
   <script type="text/javascript" src="view/javascript/summernote/opencart.js"></script>  
+  
   <script type="text/javascript"><!--
-var option_row = {{ option_row }};
-
-$('input[name=\'option\']').autocomplete({
+  
+  // Related
+$('input[name=\'related\']').autocomplete({
 	'source': function(request, response) {
 		$.ajax({
-			url: 'index.php?route=catalog/option/autocomplete&user_token={{ user_token }}&filter_name=' +  encodeURIComponent(request),
+			url: 'index.php?route=catalog/product/autocomplete&user_token={{ user_token }}&filter_name=' +  encodeURIComponent(request),
 			dataType: 'json',
 			success: function(json) {
 				response($.map(json, function(item) {
 					return {
-						category: item['category'],
 						label: item['name'],
-						value: item['option_id'],
-						type: item['type'],
-						option_value: item['option_value']
+						value: item['product_id']
 					}
 				}));
 			}
 		});
 	},
 	'select': function(item) {
-		html  = '<div class="tab-pane" id="tab-option' + option_row + '">';
-		html += '	<input type="hidden" name="recette_option[' + option_row + '][recette_option_id]" value="" />';
-		html += '	<input type="hidden" name="recette_option[' + option_row + '][name]" value="' + item['label'] + '" />';
-		html += '	<input type="hidden" name="recette_option[' + option_row + '][option_id]" value="' + item['value'] + '" />';
-		html += '	<input type="hidden" name="recette_option[' + option_row + '][type]" value="' + item['type'] + '" />';
+		$('input[name=\'related\']').val('');
 
-		html += '	<div class="form-group">';
-		html += '	  <label class="col-sm-2 control-label" for="input-required' + option_row + '">{{ entry_required }}</label>';
-		html += '	  <div class="col-sm-10"><select name="recette_option[' + option_row + '][required]" id="input-required' + option_row + '" class="form-control">';
-		html += '	      <option value="1">{{ text_yes }}</option>';
-		html += '	      <option value="0">{{ text_no }}</option>';
-		html += '	  </select></div>';
-		html += '	</div>';
+		$('#product-related' + item['value']).remove();
 
-		if (item['type'] == 'text') {
-			html += '	<div class="form-group">';
-			html += '	  <label class="col-sm-2 control-label" for="input-value' + option_row + '">{{ entry_option_value }}</label>';
-			html += '	  <div class="col-sm-10"><input type="text" name="recette_option[' + option_row + '][value]" value="" placeholder="{{ entry_option_value }}" id="input-value' + option_row + '" class="form-control" /></div>';
-			html += '	</div>';
-		}
-
-		if (item['type'] == 'textarea') {
-			html += '	<div class="form-group">';
-			html += '	  <label class="col-sm-2 control-label" for="input-value' + option_row + '">{{ entry_option_value }}</label>';
-			html += '	  <div class="col-sm-10"><textarea name="recette_option[' + option_row + '][value]" rows="5" placeholder="{{ entry_option_value }}" id="input-value' + option_row + '" class="form-control"></textarea></div>';
-			html += '	</div>';
-		}
-
-		if (item['type'] == 'file') {
-			html += '	<div class="form-group" style="display: none;">';
-			html += '	  <label class="col-sm-2 control-label" for="input-value' + option_row + '">{{ entry_option_value }}</label>';
-			html += '	  <div class="col-sm-10"><input type="text" name="recette_option[' + option_row + '][value]" value="" placeholder="{{ entry_option_value }}" id="input-value' + option_row + '" class="form-control" /></div>';
-			html += '	</div>';
-		}
-
-		if (item['type'] == 'date') {
-			html += '	<div class="form-group">';
-			html += '	  <label class="col-sm-2 control-label" for="input-value' + option_row + '">{{ entry_option_value }}</label>';
-			html += '	  <div class="col-sm-3"><div class="input-group date"><input type="text" name="recette_option[' + option_row + '][value]" value="" placeholder="{{ entry_option_value }}" data-date-format="YYYY-MM-DD" id="input-value' + option_row + '" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></div>';
-			html += '	</div>';
-		}
-
-		if (item['type'] == 'time') {
-			html += '	<div class="form-group">';
-			html += '	  <label class="col-sm-2 control-label" for="input-value' + option_row + '">{{ entry_option_value }}</label>';
-			html += '	  <div class="col-sm-10"><div class="input-group time"><input type="text" name="recette_option[' + option_row + '][value]" value="" placeholder="{{ entry_option_value }}" data-date-format="HH:mm" id="input-value' + option_row + '" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></div>';
-			html += '	</div>';
-		}
-
-		if (item['type'] == 'datetime') {
-			html += '	<div class="form-group">';
-			html += '	  <label class="col-sm-2 control-label" for="input-value' + option_row + '">{{ entry_option_value }}</label>';
-			html += '	  <div class="col-sm-10"><div class="input-group datetime"><input type="text" name="recette_option[' + option_row + '][value]" value="" placeholder="{{ entry_option_value }}" data-date-format="YYYY-MM-DD HH:mm" id="input-value' + option_row + '" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></div>';
-			html += '	</div>';
-		}
-
-		if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
-			html += '<div class="table-responsive">';
-			html += '  <table id="option-value' + option_row + '" class="table table-striped table-bordered table-hover">';
-			html += '  	 <thead>';
-			html += '      <tr>';
-			html += '        <td class="text-left">{{ entry_option_value }}</td>';
-			html += '        <td class="text-right">{{ entry_quantity }}</td>';
-			html += '        <td class="text-left">{{ entry_subtract }}</td>';
-			html += '        <td class="text-right">{{ entry_price }}</td>';
-			html += '        <td class="text-right">{{ entry_option_points }}</td>';
-			html += '        <td class="text-right">{{ entry_weight }}</td>';
-			html += '        <td></td>';
-			html += '      </tr>';
-			html += '  	 </thead>';
-			html += '  	 <tbody>';
-			html += '    </tbody>';
-			html += '    <tfoot>';
-			html += '      <tr>';
-			html += '        <td colspan="6"></td>';
-			html += '        <td class="text-left"><button type="button" onclick="addOptionValue(' + option_row + ');" data-toggle="tooltip" title="{{ button_option_value_add }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button></td>';
-			html += '      </tr>';
-			html += '    </tfoot>';
-			html += '  </table>';
-			html += '</div>';
-
-            html += '  <select id="option-values' + option_row + '" style="display: none;">';
-
-            for (i = 0; i < item['option_value'].length; i++) {
-				html += '  <option value="' + item['option_value'][i]['option_value_id'] + '">' + item['option_value'][i]['name'] + '</option>';
-            }
-
-            html += '  </select>';
-			html += '</div>';
-		}
-
-		$('#tab-option .tab-content').append(html);
-
-		$('#option > li:last-child').before('<li><a href="#tab-option' + option_row + '" data-toggle="tab"><i class="fa fa-minus-circle" onclick=" $(\'#option a:first\').tab(\'show\');$(\'a[href=\\\'#tab-option' + option_row + '\\\']\').parent().remove(); $(\'#tab-option' + option_row + '\').remove();"></i>' + item['label'] + '</li>');
-
-		$('#option a[href=\'#tab-option' + option_row + '\']').tab('show');
-
-		$('[data-toggle=\'tooltip\']').tooltip({
-			container: 'body',
-			html: true
-		});
-
-		$('.date').datetimepicker({
-			language: '{{ datepicker }}',
-			pickTime: false
-		});
-
-		$('.time').datetimepicker({
-			language: '{{ datepicker }}',
-			pickDate: false
-		});
-
-		$('.datetime').datetimepicker({
-			language: '{{ datepicker }}',
-			pickDate: true,
-			pickTime: true
-		});
-
-		option_row++;
+		$('#product-related').append('<div id="product-related' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="product_related[]" value="' + item['value'] + '" /></div>');
 	}
 });
-//--></script> 
 
-  <script type="text/javascript"><!--
+$('#product-related').delegate('.fa-minus-circle', 'click', function() {
+	$(this).parent().remove();
+});
+
 var image_row = {{ image_row }};
 
 function addImage() {
@@ -329,35 +263,6 @@ function addImage() {
 	$('#images tbody').append(html);
 
 	image_row++;
-}
-//--></script> 
-  <script type="text/javascript"><!--
-var recurring_row = {{ recurring_row }};
-
-function addRecurring() {
-	html  = '<tr id="recurring-row' + recurring_row + '">';
-	html += '  <td class="left">';
-	html += '    <select name="recette_recurring[' + recurring_row + '][recurring_id]" class="form-control">>';
-	{% for recurring in recurrings %}
-	html += '      <option value="{{ recurring.recurring_id }}">{{ recurring.name }}</option>';
-	{% endfor %}
-	html += '    </select>';
-	html += '  </td>';
-	html += '  <td class="left">';
-	html += '    <select name="recette_recurring[' + recurring_row + '][customer_group_id]" class="form-control">>';
-	{% for customer_group in customer_groups %}
-	html += '      <option value="{{ customer_group.customer_group_id }}">{{ customer_group.name }}</option>';
-	{% endfor %}
-	html += '    <select>';
-	html += '  </td>';
-	html += '  <td class="left">';
-	html += '    <a onclick="$(\'#recurring-row' + recurring_row + '\').remove()" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger"><i class="fa fa-minus-circle"></i></a>';
-	html += '  </td>';
-	html += '</tr>';
-
-	$('#tab-recurring table tbody').append(html);
-
-	recurring_row++;
 }
 //--></script> 
   <script type="text/javascript"><!--

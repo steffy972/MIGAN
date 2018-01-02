@@ -16,6 +16,13 @@ class ModelCatalogRecette extends Model {
 			}
 		}
 
+		
+		if (isset($data['product_related'])) {
+			foreach ($data['product_related'] as $related_id) {
+				$this->db->query("DELETE FROM " . DB_PREFIX . "recette_product WHERE recette_id = '" . (int)$recette_id . "' AND product_id = '" . (int)$related_id . "'");
+				$this->db->query("INSERT INTO " . DB_PREFIX . "recette_product SET recette_id = '" . (int)$recette_id . "', product_id = '" . (int)$related_id . "'");
+			}
+		}
 
 		$this->cache->delete('recette');
 
@@ -34,6 +41,16 @@ class ModelCatalogRecette extends Model {
 		if (isset($data['recette_image'])) {
 			foreach ($data['recette_image'] as $recette_image) {
 				$this->db->query("INSERT INTO " . DB_PREFIX . "recette_image SET recette_id = '" . (int)$recette_id . "', image = '" . $this->db->escape($recette_image['image']) . "', sort_order = '" . (int)$recette_image['sort_order'] . "'");
+			}
+		}
+		
+		
+		$this->db->query("DELETE FROM " . DB_PREFIX . "recette_product WHERE recette_id = '" . (int)$recette_id . "'");
+
+		if (isset($data['product_related'])) {
+			foreach ($data['product_related'] as $related_id) {
+				$this->db->query("DELETE FROM " . DB_PREFIX . "recette_product WHERE recette_id = '" . (int)$recette_id . "' AND product_id = '" . (int)$related_id . "'");
+				$this->db->query("INSERT INTO " . DB_PREFIX . "recette_product SET recette_id = '" . (int)$recette_id . "', product_id = '" . (int)$related_id . "'");
 			}
 		}
 
@@ -308,13 +325,13 @@ class ModelCatalogRecette extends Model {
 		return $recette_layout_data;
 	}
 
-	public function getRecetteRelated($recette_id) {
+	public function getProductRelated($recette_id) {
 		$recette_related_data = array();
 
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "recette_related WHERE recette_id = '" . (int)$recette_id . "'");
-
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "recette_product WHERE recette_id = '" . (int)$recette_id . "'");
+		
 		foreach ($query->rows as $result) {
-			$recette_related_data[] = $result['related_id'];
+			$recette_related_data[] = $result['product_id'];
 		}
 
 		return $recette_related_data;

@@ -20,7 +20,7 @@ class ControllerCatalogRecette extends Controller {
 		$this->load->model('catalog/recette');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
-			$this->model_catalog_recette->addrecette($this->request->post);
+			$this->model_catalog_recette->addRecette($this->request->post);
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
@@ -28,22 +28,6 @@ class ControllerCatalogRecette extends Controller {
 
 			if (isset($this->request->get['filter_name'])) {
 				$url .= '&filter_name=' . urlencode(html_entity_decode($this->request->get['filter_name'], ENT_QUOTES, 'UTF-8'));
-			}
-
-			if (isset($this->request->get['filter_model'])) {
-				$url .= '&filter_model=' . urlencode(html_entity_decode($this->request->get['filter_model'], ENT_QUOTES, 'UTF-8'));
-			}
-
-			if (isset($this->request->get['filter_price'])) {
-				$url .= '&filter_price=' . $this->request->get['filter_price'];
-			}
-
-			if (isset($this->request->get['filter_quantity'])) {
-				$url .= '&filter_quantity=' . $this->request->get['filter_quantity'];
-			}
-
-			if (isset($this->request->get['filter_status'])) {
-				$url .= '&filter_status=' . $this->request->get['filter_status'];
 			}
 
 			if (isset($this->request->get['sort'])) {
@@ -525,6 +509,7 @@ class ControllerCatalogRecette extends Controller {
 			$recette_info = $this->model_catalog_recette->getRecette($this->request->get['recette_id']);
 		}
 
+
 		$data['user_token'] = $this->session->data['user_token'];
 
 		$this->load->model('localisation/language');
@@ -585,11 +570,33 @@ class ControllerCatalogRecette extends Controller {
 			
 			$this->load->model('localisation/length_class');
 		}
-
-
 		
+		$this->load->model('catalog/product');
+		
+		if (isset($this->request->post['product_related'])) {
+			$products = $this->request->post['product_related'];
+		} elseif (isset($this->request->get['recette_id'])) {
+			$products = $this->model_catalog_recette->getProductRelated($this->request->get['recette_id']);
+		} else {
+			$products = array();
+		}
 
-		$data['recette'] = $recette_info;
+		$data['product_relateds'] = array();
+		foreach ($products as $product_id) {
+			$related_info = $this->model_catalog_product->getProduct($product_id);
+			
+			if ($related_info) {
+				$data['product_relateds'][] = array(
+					'product_id' => $related_info['product_id'],
+					'name'       => $related_info['name']
+				);
+			}
+		}
+		
+		if(!empty($recette_info))
+			$data['recette'] = $recette_info;
+		else
+			$data['recette'] = array();
 
 
 		
