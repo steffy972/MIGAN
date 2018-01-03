@@ -364,6 +364,7 @@ class ControllerCatalogProduct extends Controller {
 				'name'       => $result['name'],
 				'model'      => $result['model'],
 				'price'      => $this->currency->format($result['price'], $this->config->get('config_currency')),
+				'price_pro'      => $this->currency->format($result['price_pro'], $this->config->get('config_currency')),
 				'special'    => $special,
 				'quantity'   => $result['quantity'],
 				'status'     => $result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
@@ -697,6 +698,13 @@ class ControllerCatalogProduct extends Controller {
 			$data['price'] = $product_info['price'];
 		} else {
 			$data['price'] = '';
+		}
+		if (isset($this->request->post['price_pro'])) {
+			$data['price_pro'] = $this->request->post['price_pro'];
+		} elseif (!empty($product_info)) {
+			$data['price_pro'] = $product_info['price_pro'];
+		} else {
+			$data['price_pro'] = '';
 		}
 
 		$this->load->model('catalog/recurring');

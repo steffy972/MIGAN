@@ -58,6 +58,7 @@ $_['entry_quantity'] = 'Quantité';
 $_['entry_minimum'] = 'Quantité minimale';
 $_['entry_stock_status'] = 'Statut d’indisponibilité';
 $_['entry_price'] = 'Prix';
+$_['entry_price_pro'] = 'Prix Professionnel';
 $_['entry_tax_class'] = 'Classe de taxes';
 $_['entry_points'] = 'Points';
 $_['entry_option_points'] = 'Points';
