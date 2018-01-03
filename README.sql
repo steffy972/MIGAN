@@ -53,3 +53,6 @@ ALTER TABLE `migan_order_total` CHANGE `value` `value` DECIMAL(3,2) NOT NULL DEF
 ALTER TABLE `migan_order_voucher` CHANGE `amount` `amount` DECIMAL(3,2) NOT NULL DEFAULT '0.00';
 ALTER TABLE `migan_product_option_value` CHANGE `price` `price` DECIMAL(3,2) NOT NULL DEFAULT '0.00';
 ALTER TABLE `migan_statistics` CHANGE `value` `value` DECIMAL(3,2) NOT NULL DEFAULT '0.00';
+
+ALTER TABLE `migan_product` CHANGE `date_available` `date_available` DATE NULL DEFAULT NULL;
+ALTER TABLE `migan_product` CHANGE `price` `price` DECIMAL(15,2) NOT NULL DEFAULT '0.0000';
