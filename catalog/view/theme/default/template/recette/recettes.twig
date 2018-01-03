@@ -59,7 +59,8 @@
 									{% endfor %} </div>
 								{% endif %} </div>
 							<div class="button-group">
-								<button type="button" onclick="window.location.href='{{ recette.href }}'; "><i class="fa fa-book"></i> <span class="hidden-xs hidden-sm hidden-md">Voir la recette</span></button>
+								<input type="hidden" value="{{ recette.href }}">
+								<button type="button" id="voir-recette"><i class="fa fa-book"></i> <span class="hidden-xs hidden-sm hidden-md">Voir la recette</span></button>
 								<button type="button" data-toggle="tooltip" title="{{ button_suggestion }}" onclick="compare.add('{{ recette.recette_id }}');"><i class="fa fa-list-alt"></i></button>
 							</div>
 						</div>
@@ -80,4 +81,11 @@
 			{{ content_bottom }}</div>
 		{{ column_right }}</div>
 </div>
-{{ footer }} 
+{{ footer }}
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#voir-recette').click(function(){
+			$('.image').find('img').click();
+		});
+	});
+</script>
