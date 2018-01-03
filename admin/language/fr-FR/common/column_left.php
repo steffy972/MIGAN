@@ -44,6 +44,7 @@ $_['text_order_status']         = 'Order Statuses';
 $_['text_En ligne']               = 'Who\'s En ligne';
 $_['text_product']              = 'Produits';
 $_['text_recette']              = 'Recettes';
+$_['text_goodie']              = 'Goodie';
 $_['text_reports']              = 'Reports';
 $_['text_review']               = 'Reviews';
 $_['text_return']               = 'Returns';
