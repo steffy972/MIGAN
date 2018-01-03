@@ -176,6 +176,7 @@ class ControllerRecetteRecette extends Controller {
 				$product_id = $product_line['product_id'];
 				$product = $this->model_catalog_product->getProduct($product_id);
 				$product_attribute = $this->model_catalog_product->getProductAttributes($product_id);
+				// var_dump($product_attribute);
 
 				if ($product['image']) {
 					$image = $this->model_tool_image->resize($product['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_related_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_related_height'));
@@ -183,16 +184,24 @@ class ControllerRecetteRecette extends Controller {
 					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get('theme_' . $this->config->get('config_theme') . '_image_related_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_related_height'));
 				}
 
+				if($product_attribute) {
+					$conditionnement = $product_attribute[0]['attribute'][0]['text'];
+				} else {
+					$conditionnement = '';
+				}
+
 				$data['products'][] = array(
 					'product_id'      => $product['product_id'],
 					'thumb'           => $image,
 					'name'            => $product['name'],
-					'conditionnement' => $product_attribute[0]['attribute'][0]['text'],
+					'conditionnement' => $conditionnement,
 					'price'           => $product['price'],
 					'description'     => utf8_substr(trim(strip_tags(html_entity_decode($product['description'], ENT_QUOTES, 'UTF-8'))), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_recette_description_length')) . '..',
 					'href'            => $this->url->link('product/product', 'product_id=' . $product['product_id'])
 				);
 			}
+
+			// var_dump($data['products']);
 			
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
