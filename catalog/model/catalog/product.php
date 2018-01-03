@@ -29,7 +29,7 @@ class ModelCatalogProduct extends Model {
 				'image'            => $query->row['image'],
 				'manufacturer_id'  => $query->row['manufacturer_id'],
 				'manufacturer'     => $query->row['manufacturer'],
-				'price'            => ($query->row['discount'] ? $query->row['discount'] : $query->row['price']),
+				'price'            => ($query->row['discount'] ? $query->row['discount'] : ($this->customer->isLogged() ? ($this->customer->getGroupId()==2 ? $query->row['price_pro'] : $query->row['price'] ) : $query->row['price'])),
 				'special'          => $query->row['special'],
 				'reward'           => $query->row['reward'],
 				'points'           => $query->row['points'],

@@ -42,17 +42,7 @@ ALTER TABLE `migan_recette_image`
 COLLATE='latin1_swedish_ci'
 ;
 
-ALTER TABLE `migan_coupon_history` CHANGE `amount` `amount` DECIMAL(15,4) NOT NULL DEFAULT '0.00';
-ALTER TABLE `migan_customer_transaction` CHANGE `amount` `amount` DECIMAL(15,4) NOT NULL DEFAULT '0.00';
-ALTER TABLE `migan_order` CHANGE `total` `total` DECIMAL(15,4) NOT NULL DEFAULT '0.00';
-ALTER TABLE `migan_order` CHANGE `commission` `commission` DECIMAL(15,4) NOT NULL DEFAULT '0.00';
-ALTER TABLE `migan_order_product` CHANGE `price` `price` DECIMAL(15,4) NOT NULL DEFAULT '0.00';
-ALTER TABLE `migan_order_product` CHANGE `total` `total` DECIMAL(15,4) NOT NULL DEFAULT '0.00';
-ALTER TABLE `migan_order_product` CHANGE `tax` `tax` DECIMAL(15,4) NOT NULL DEFAULT '0.00';
-ALTER TABLE `migan_order_total` CHANGE `value` `value` DECIMAL(15,4) NOT NULL DEFAULT '0.00';
-ALTER TABLE `migan_order_voucher` CHANGE `amount` `amount` DECIMAL(15,4) NOT NULL DEFAULT '0.00';
-ALTER TABLE `migan_product_option_value` CHANGE `price` `price` DECIMAL(15,4) NOT NULL DEFAULT '0.00';
-ALTER TABLE `migan_statistics` CHANGE `value` `value` DECIMAL(15,4) NOT NULL DEFAULT '0.00';
-
 ALTER TABLE `migan_product` CHANGE `date_available` `date_available` DATE NULL DEFAULT NULL;
 ALTER TABLE `migan_product` CHANGE `price` `price` DECIMAL(15,2) NOT NULL DEFAULT '0.0000';
+ALTER TABLE `migan_product`
+	ADD COLUMN `price_pro` DECIMAL(15,2) NOT NULL DEFAULT '0.00' AFTER `price`;
