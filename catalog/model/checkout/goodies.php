@@ -5,7 +5,7 @@ class ModelCheckoutGoodies extends Model {
 		// migan :::::: " . DB_PREFIX . "
 		$query = $this->db->query("	SELECT goodie_id, nom_lot, stock, image, nom_couleur, nom_taille, nom_sexe, id_type, id_sexe
 									FROM migan_goodie g, migan_goodie_couleur gc, migan_goodie_taille gt, migan_goodie_sexe gs
-									WHERE CONVERT(points, SIGNED INTEGER) < 150
+									WHERE CONVERT(points, SIGNED INTEGER) < $total
 									AND g.id_couleur = gc.idcouleur
 									AND g.id_taille = gt.idtaille
 									AND g.id_sexe = gs.idsexe
