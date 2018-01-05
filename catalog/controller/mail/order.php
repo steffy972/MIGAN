@@ -370,6 +370,7 @@ class ControllerMailOrder extends Controller {
 			$data['text_product'] = $this->language->get('text_product');
 			$data['text_total'] = $this->language->get('text_total');
 			$data['text_comment'] = $this->language->get('text_comment');
+			$data['text_goodie'] = $this->language->get('text_goodie');
 			
 			$data['order_id'] = $order_info['order_id'];
 			$data['date_added'] = date($this->language->get('date_format_short'), strtotime($order_info['date_added']));
@@ -442,6 +443,9 @@ class ControllerMailOrder extends Controller {
 					'value' => html_entity_decode($this->currency->format($order_total['value'], $order_info['currency_code'], $order_info['currency_value']), ENT_NOQUOTES, 'UTF-8')
 				);
 			}
+
+			$this->load->model('checkout/goodies');
+			$data['goodie'] = $this->model_checkout_goodies->getGoodieOrder($order_id);
 
 			$data['comment'] = strip_tags($order_info['comment']);
 

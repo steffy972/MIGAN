@@ -408,8 +408,14 @@ class ControllerCheckoutConfirm extends Controller {
 			}
 
 			$data['payment'] = $this->load->controller('extension/payment/' . $this->session->data['payment_method']['code']);
+			$data['goodies'] = $this->session->data['goodies'];
+			if($data['goodies'] != null){
+				$this->load->model('checkout/goodies');
+				$data['goodies']['response'] = $this->model_checkout_goodies->distributeGoodie($data['goodies']['type'], $data['goodies']['sexe'], $data['goodies']['taille'], $data['goodies']['couleur'], $this->session->data['order_id']);
+			}
 		} else {
 			$data['redirect'] = $redirect;
+			$data['goodies']['response'] = false;
 		}
 
 		$this->response->setOutput($this->load->view('checkout/confirm', $data));

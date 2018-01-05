@@ -98,6 +98,7 @@ class ControllerMailCustomer extends Controller {
 			$data['text_welcome'] = sprintf($language->get('text_welcome'), $store_name);
 			$data['text_login'] = sprintf($language->get('text_login'), $store_name);
 			$data['text_service'] = sprintf($language->get('text_service'), $store_name);
+			$data['text_denied'] = sprintf($language->get('text_denied'), $store_name);
 			$data['text_thanks'] = sprintf($language->get('text_thanks'), $store_name);
 			$data['image_header'] = HTTP_SERVER."image/mail_header.jpg";
 			$data['image_footer'] = HTTP_SERVER."image/mail_footer.png";

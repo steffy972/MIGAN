@@ -12,7 +12,9 @@ class ControllerCheckoutLogin extends Controller {
 		}
 
 		$data['forgotten'] = $this->url->link('account/forgotten', '', true);
-
+		if(isset($this->request->get["App"]) && $this->request->get["App"]==1)
+			$data['error_warning_login'] = $this->language->get('error_approved');
+		
 		$this->response->setOutput($this->load->view('checkout/login', $data));
 	}
 

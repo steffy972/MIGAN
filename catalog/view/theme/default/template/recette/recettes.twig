@@ -1,3 +1,8 @@
+<style type="text/css">
+	.product-thumb .button-group button {
+		width: 100%!important;
+	}
+</style>
 {{ header }}
 <div id="product-category" class="container">
 	<ul class="breadcrumb">
@@ -59,9 +64,7 @@
 									{% endfor %} </div>
 								{% endif %} </div>
 							<div class="button-group">
-								<input type="hidden" value="{{ recette.href }}">
 								<button type="button" id="voir-recette"><i class="fa fa-book"></i> <span class="hidden-xs hidden-sm hidden-md">Voir la recette</span></button>
-								<button type="button" data-toggle="tooltip" title="{{ button_suggestion }}" onclick="compare.add('{{ recette.recette_id }}');"><i class="fa fa-list-alt"></i></button>
 							</div>
 						</div>
 					</div>
