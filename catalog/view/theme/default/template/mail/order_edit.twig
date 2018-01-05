@@ -1,21 +1,41 @@
-{{ text_order_id }} {{ order_id }}
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{{ title }}</title>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000;">
+<div style="text-align:center"; "width: 680px;"><a href="{{ store_url }}" title="{{ store_name }}"><img style="height: auto; width: 100%;" src="http://localhost/MIGAN/image/mail_header.jpg"></a>
+<br><br>
+<p>
+{{ text_order_id }} {{ order_id }} <br>
 {{ text_date_added }} {{ date_added }}
+</p>
 
+<p>
 {{ text_order_status }}
-
 {{ order_status }}
+</p>
 
+<p>
 {% if link %}
-{{ text_link }}
-
+{{ text_link }}<br>
 {{ link }}
 {% endif %}
+</p>
+
+<p>
 {% if comment %}
-
 {{ text_comment }}
-
-{{ comment }}
+{{ comment }}<br>
 {{ text_footer }}
+</p>
+<p>
 {% else %} 
 {{ text_footer }}
 {% endif %}
+</p>
+
+ <p style="margin-top: 0px; margin-bottom: 20px;"><img style="height: auto; width: 100%;" src="http://localhost/MIGAN/image/mail_footer.png"></p>
+</div>
+</body>
+</html>

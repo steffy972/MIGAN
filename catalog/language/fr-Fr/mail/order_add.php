@@ -3,15 +3,15 @@
 $_['text_subject']          = '%s - Ordonnance %s';
 $_['text_greeting']         = 'Votre commande chez %s a été reçue avec succès et sera traitée une fois le paiement confirmé.';
 $_['text_link']             = 'Pour afficher votre commande, cliquez sur le lien ci-dessous:';
-$_['text_order_detail']     = 'détails de la commande';
+$_['text_order_detail']     = 'D&eacutetails de la commande';
 $_['text_instruction']      = 'Instructions';
-$_['text_order_id']         = 'Numéro de commande:';
+$_['text_order_id']         = 'Num&eacutero de commande:';
 $_['text_date_added']       == 'Date ajoutée:';
 $_['text_order_status']     = 'Statut de la commande:';
 $_['text_payment_method']   = 'Mode de paiement:';
 $_['text_shipping_method']  == 'Méthode d\'envoi:';
 $_['text_email']            = 'E-mail:';
-$_['text_telephone']        = 'Téléphone:';
+$_['text_telephone']        = 'T&eacutel&eacutephone:';
 $_['text_ip']               = 'Adresse IP:';
 $_['text_payment_address']  = 'Adresse de facturation';
 $_['text_shipping_address'] = 'Adresse de livraison';
