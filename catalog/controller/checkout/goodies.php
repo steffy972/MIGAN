@@ -17,7 +17,7 @@ class ControllerCheckoutGoodies extends Controller {
 		
 		$data = array();
 		$data['goodies'] = $goodies;
-		$data['image_url'] = DIR_IMAGE;
+		$data['image_url'] = HTTP_SERVER.'image/';
 
 		return $this->load->view('checkout/goodies', $data);
 	}
