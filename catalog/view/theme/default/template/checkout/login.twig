@@ -1,4 +1,7 @@
 <div class="row">
+{% if error_warning_login %}
+  <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning_login }}</div>
+  {% endif %}
   <div class="col-sm-6">
     <h2>{{ text_new_customer }}</h2>
     <p>{{ text_checkout }}</p>

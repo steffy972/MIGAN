@@ -239,6 +239,21 @@ $(document).delegate('#button-register', 'click', function() {
 				// Highlight any found errors
 				$('.text-danger').parent().addClass('has-error');
             } else {
+					$.ajax({
+						url: 'index.php?route=checkout/login&App=1',
+						dataType: 'html',
+						success: function(html) {
+						   $('#collapse-checkout-option .panel-body').html(html);
+
+							$('#collapse-checkout-option').parent().find('.panel-heading .panel-title').html('<a href="#collapse-checkout-option" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle">{{ text_checkout_option }} <i class="fa fa-caret-down"></i></a>');
+
+							$('a[href=\'#collapse-checkout-option\']').trigger('click');
+						},
+						error: function(xhr, ajaxOptions, thrownError) {
+							alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+						}
+					});
+			/*
                 {% if shipping_required %}
                 var shipping_address = $('#payment-address input[name=\'shipping_address\']:checked').prop('value');
 
@@ -328,7 +343,7 @@ $(document).delegate('#button-register', 'click', function() {
                     error: function(xhr, ajaxOptions, thrownError) {
                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
                     }
-                });
+                });*/
             }
         },
         error: function(xhr, ajaxOptions, thrownError) {
