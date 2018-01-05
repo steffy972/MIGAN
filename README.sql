@@ -45,4 +45,11 @@ COLLATE='latin1_swedish_ci'
 ALTER TABLE `migan_product` CHANGE `date_available` `date_available` DATE NULL DEFAULT NULL;
 ALTER TABLE `migan_product` CHANGE `price` `price` DECIMAL(15,2) NOT NULL DEFAULT '0.0000';
 ALTER TABLE `migan_product`
-	ADD COLUMN `price_pro` DECIMAL(15,2) NOT NULL DEFAULT '0.00' AFTER `price`;
+ADD COLUMN `price_pro` DECIMAL(15,2) NOT NULL DEFAULT '0.00' AFTER `price`;
+
+CREATE TABLE IF NOT EXISTS `migan_order_goodie` (
+	`goodie_id` int(11) NOT NULL,
+	`order_id` int(11) NOT NULL,
+	KEY `goodie_id` (`goodie_id`),
+	KEY `order_id` (`order_id`)
+)

@@ -8,4 +8,4 @@ $_['text_order_status'] = 'Votre commande a été mise à jour pour le statut suiva
 $_['text_product']      = 'Produit';
 $_['text_total']        = 'Total';
 $_['text_comment']      = 'Les commentaires pour votre commande sont les suivants:';
-
+$_['text_goodie']       = 'Voici le lot choisi par le client :';
