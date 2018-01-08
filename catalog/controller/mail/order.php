@@ -79,7 +79,6 @@ class ControllerMailOrder extends Controller {
 		$data['text_order_status'] = $language->get('text_order_status');
 		$data['text_order_status2'] = $language->get('text_order_status2');
 		$data['text_order_status3'] = $language->get('text_order_status3');
-		$data['text_order_status4'] = $language->get('text_order_status4');
 		$data['text_payment_address'] = $language->get('text_payment_address');
 		$data['text_shipping_address'] = $language->get('text_shipping_address');
 		$data['text_product'] = $language->get('text_product');
@@ -289,7 +288,6 @@ class ControllerMailOrder extends Controller {
 		$data['text_order_status'] = $language->get('text_order_status');
 		$data['text_order_status2'] = $language->get('text_order_status2');
 		$data['text_order_status3'] = $language->get('text_order_status3');
-		$data['text_order_status4'] = $language->get('text_order_status4');
 		$data['text_link'] = $language->get('text_link');
 		$data['text_comment'] = $language->get('text_comment');
 		$data['text_footer'] = $language->get('text_footer');
@@ -375,7 +373,6 @@ class ControllerMailOrder extends Controller {
 			$data['text_order_status'] = $this->language->get('text_order_status');
 			$data['text_order_status2'] = $this->language->get('text_order_status2');
 			$data['text_order_status3'] = $this->language->get('text_order_status3');
-			$data['text_order_status4'] = $this->language->get('text_order_status4');
 			$data['text_product'] = $this->language->get('text_product');
 			$data['text_total'] = $this->language->get('text_total');
 			$data['text_comment'] = $this->language->get('text_comment');
