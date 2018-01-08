@@ -3,39 +3,49 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>{{ title }}</title>
 </head>
-<body style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000;">
-<div style="text-align:center"; "width: 680px;"><a href="{{ store_url }}" title="{{ store_name }}"><img style="height: auto; width: 100%;" src="http://localhost/MIGAN/image/mail_header.jpg"></a>
+<body style="font-family: 'Century gothic'; font-size: 16px; color: #000000;">
+<center>
+<div style="width: 680px;">
+<a href="{{ store_url }}" title="{{ store_name }}"><img style="height: auto; width: 100;" src="http://localhost/MIGAN/image/mail_header.jpg"></a>
 <br><br>
+
 <p>
-{{ text_order_id }} {{ order_id }} <br>
-{{ text_date_added }} {{ date_added }}
+<FONT face="Century gothic">
+{{ text_order_status }}{{ order_id }}
+{{text_order_status2}}{{ date_added }}
+{{text_order_status3}}{{ order_status }}
+</FONT>
 </p>
 
 <p>
-{{ text_order_status }}
-{{ order_status }}
-</p>
-
-<p>
+<FONT face="Century gothic">
 {% if link %}
 {{ text_link }}<br>
 {{ link }}
 {% endif %}
+</FONT>
 </p>
 
 <p>
+<FONT face="Century gothic">
 {% if comment %}
 {{ text_comment }}
 {{ comment }}<br>
 {{ text_footer }}
+</FONT>
 </p>
+
 <p>
+<FONT face="Century gothic">
 {% else %} 
 {{ text_footer }}
 {% endif %}
+</FONT>
 </p>
 
  <p style="margin-top: 0px; margin-bottom: 20px;"><img style="height: auto; width: 100%;" src="http://localhost/MIGAN/image/mail_footer.png"></p>
+
 </div>
+</center>
 </body>
 </html>
